@@ -12,7 +12,7 @@ export default function Card(props: CardProps) {
     return (
         <div className="flex justify-center content-center">
             <div>
-                <div className="text-2xl text-decoration-line: underline flex p-2">{props.company}</div>
+                <div className="text-4xl text-decoration-line: underline flex p-2">{props.company}</div>
                 <div className="text-xl flex p-2">{IconProfile}{props.name}</div>
                 <div className="text-xl flex p-2">{IconPhone}{props.phone}</div>
                 <div className="text-xl flex p-2">{IconEmail}{props.email}</div>

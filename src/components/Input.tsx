@@ -9,8 +9,8 @@ interface InputProps {
 export default function Input(props: InputProps) {
     return (
         <div className={`flex flex-col mb-4 ${props.className} `}>
-            <label className="mb-4 ml-2 text-white">{props.text}</label>
             <input type={props.type ?? 'text'} 
+                   placeholder={props.text}
                    value={props.value}  
                    className={`
                     ml-2 mr-2
