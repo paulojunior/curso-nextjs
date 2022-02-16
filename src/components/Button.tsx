@@ -2,6 +2,7 @@
 interface ButtonProps {
     className?: string
     children: any
+    onClick?: () => void
 }
 
 export default function Button(props: ButtonProps) {
@@ -16,8 +17,9 @@ export default function Button(props: ButtonProps) {
             py-2
             rounded-md
             ${props.className}
-
-        `}>
+        `}
+        onClick={props.onClick}
+        >
             {props.children}
         </button>
     )

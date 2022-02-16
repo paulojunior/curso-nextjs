@@ -1,17 +1,23 @@
-import Client from "../core/Client";
+import { IconEmail, IconInstagram, IconPhone, IconProfile } from "./Icons";
 
 interface CardProps {
-    client: Client
+    company?: string | string[]
+    name?: string | string[]
+    phone?: string | string[]
+    email?: string | string[]
+    instagram?: string | string[]
 }
 
 export default function Card(props: CardProps) {
     return (
-        <div>
-            <div>{props.client.company}</div>
-            <div>{props.client.name}</div>
-            <div>{props.client.phone}</div>
-            <div>{props.client.email}</div>
-            <div>{props.client.instagram}</div>
+        <div className="flex justify-center content-center">
+            <div>
+                <div className="text-2xl text-decoration-line: underline flex p-2">{props.company}</div>
+                <div className="text-xl flex p-2">{IconProfile}{props.name}</div>
+                <div className="text-xl flex p-2">{IconPhone}{props.phone}</div>
+                <div className="text-xl flex p-2">{IconEmail}{props.email}</div>
+                <div className="text-xl flex p-2">{IconInstagram}{props.instagram}</div>
+            </div>
         </div>
     )
 }

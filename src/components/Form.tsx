@@ -1,12 +1,15 @@
 import Button from "./Button";
 import Checkbox from "./Checkbox";
 import Input from "./Input";
+import { useRouter } from 'next/router'
 
-interface FormProps {
+export default function Form() {
+    const router = useRouter()
 
-}
+    const handleClick = () => {
+        router.push('/qrcode')
+    }
 
-export default function Form(props: FormProps) {
     return (
         <div>
             <Input text="Nome" type="text" />
@@ -16,7 +19,8 @@ export default function Form(props: FormProps) {
             <Input text="Instagram" type="text" />
             <Checkbox text="Estou ciente e permito a coleta dos meus dados pessoais" />
             <div className={`flex justify-end mr-2`} >
-                <Button children={"Salvar"}/>
+                <Button children={"Limpar"} onClick={router.reload} />
+                <Button children={"Salvar"} onClick={handleClick} />
             </div>
         </div>
     )
