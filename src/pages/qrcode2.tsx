@@ -1,7 +1,7 @@
 import QrCode from "../components/QrCode"
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import tag from '../../public/tag_v2.jpeg'
+import tag from '../../public/tag.jpeg'
 
 export default function QrCodePage() {
   const router = useRouter()
