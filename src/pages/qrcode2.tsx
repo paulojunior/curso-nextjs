@@ -8,7 +8,7 @@ export default function QrCodePage() {
   return (
     <div className={``}>
       <Image src={ tag } alt="match icon" />
-      <div className="absolute left-44 top-24"><QrCode name={router.query.name} email={router.query.email} company={router.query.company} phone={router.query.phone} instagram={router.query.instagram} /></div>
+      <div className="absolute left-36 top-20"><QrCode name={router.query.name} email={router.query.email} company={router.query.company} phone={router.query.phone} instagram={router.query.instagram} /></div>
     </div>
   )
 }
