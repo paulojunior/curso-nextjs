@@ -12,7 +12,7 @@ export default function QrCodePage() {
       <div className={`
         bg-[url('../../public/tag.jpeg')] h-screen w-1/2
         bg-cover flex justify-center items-center
-    `}><QrCode name={router.query.name} email={router.query.email} company={router.query.company} phone={router.query.phone} instagram={router.query.instagram} /></div>
+    `}>{/*<QrCode name={router.query.name} email={router.query.email} company={router.query.company} phone={router.query.phone} instagram={router.query.instagram} />*/}</div>
     </div>
   )
 }
