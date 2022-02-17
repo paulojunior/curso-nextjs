@@ -10,12 +10,12 @@ export default function Home() {
       bg-cover h-screen
       `}>
         <div className={`p-7 flex justify-center `}>
-          <Image src={matchWork} alt="match icon"   />
+          <Image src={matchWork} alt="match icon" width={348} height={153}  />
         </div>
         <div className={`w-screen flex justify-end`}>
           <Form />
           <div className="pl-14"></div>
-          <Image src={imgForm } width={350} height={350} alt="match icon"/>
+          <Image src={imgForm } width={500} height={500} alt="match icon"/>
         </div>
     </div>
   )
