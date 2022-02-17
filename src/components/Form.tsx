@@ -2,10 +2,9 @@ import Button from "./Button";
 import Checkbox from "./Checkbox";
 import Input from "./Input";
 import { useRouter } from 'next/router'
-import { Formik } from "formik";
 import { useState } from "react";
 
-export default function Form() {
+export default function Formulario() {
     const router = useRouter()
 
     //user details
@@ -14,62 +13,52 @@ export default function Form() {
     const [phone, setPhone] = useState('')
     const [company, setCompany] = useState('')
     const [instagram, setInstagram] = useState('')
-    const [data, setData] = useState('')
+    const [data, setData] = useState<boolean>(false)
     
 
-    const handleClick = () => {
-        router.push('/qrcode')
+    const handleForm = async () => {
+        if (validadeInputs()) {
+
+            await fetch('/api/cliente', {
+                method: 'POST',
+                body: JSON.stringify({ name: name, email: email, phone: phone, company: company, instagram: instagram, data: data }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+            router.push({
+                pathname: '/qrcode',
+                query: { name: name, email: email, phone: phone, company: company, instagram: instagram, data: data },
+             })
+        }
     }
 
     const validadeInputs = () => {
-        const errors = {};
-        if (!name) {
-            errors.name = 'Preenchimento obrigatório';
+        var error = false ;
+        if (!name || !email || !phone || !company || !instagram) {
+            var error = true;
+            alert("Por favor preencha todos os campos.")
         }
-        else if (!email) {
-            errors.email = 'Preenchimento obrigatório'
-        }
-        else if (!phone) {
-            errors.phone = 'Preenchimento obrigatório'
-        }
-        else if (!company) {
-            errors.company = 'Preenchimento obrigatório'
-        }
-        else if (!instagram) {
-            errors.instagram = 'Preenchimento obrigatório'
-        }
-        else if (!data) {
-            errors.data = 'Preenchimento obrigatório'
-        }
-        return errors;
+
+        return !error
     }
 
 
     return (
         <div>
-            <Formik
-                initialValues={{name: '', email: '', phone: '', company: '', instagram: '', data: Boolean}}
-                validate={() => {
-                    const errors = validadeInputs()
-                    return errors
-                }}
-                onSubmit={(values, {setSubmitting}) => {
-                    window.open('/qrcode')
-                }
-                }>
-                <Form>
-                    <Input text="Nome" type="text" />
-                    <Input text="E-mail" type="email" />
-                    <Input text="Telefone" type="number" />
-                    <Input text="Empresa" type="text" />
-                    <Input text="Instagram da empresa: informe seu @" type="text" />
-                    <Checkbox text="Estou ciente e permito a coleta dos meus dados pessoais" />
-                    <div className={`flex justify-end mr-2`} >
-                        <Button children={"Limpar"} onClick={router.reload} />
-                        <Button children={"Salvar"}  />
-                    </div>
-                </Form>
-            </Formik>
+            <form onSubmit={handleForm} action="#">
+                <Input text="Nome" type="text" value={name} changeValue={(e) => setName(e.target.value)} />
+                <Input text="E-mail" type="email" value={email} changeValue={(e) => setEmail(e.target.value)} />
+                <Input text="Telefone" type="number" value={phone} changeValue={(e) => setPhone(e.target.value)} />
+                <Input text="Empresa" type="text" value={company} changeValue={(e) => setCompany(e.target.value)} />
+                <Input text="Instagram da empresa: informe seu @" value={instagram} type="text" changeValue={(e) => setInstagram(e.target.value)} />
+                <Checkbox text="Estou ciente e permito a coleta dos meus dados pessoais" changeValue={(e) => setData(e.target.value)} />
+                <div className={`flex justify-end mr-2`} >
+                    <Button children={"Limpar"} onClick={router.reload} />
+                    <Button children={"Salvar"} />
+                </div>
+            </form>
         </div>
     )
 }

@@ -14,9 +14,11 @@ export default function Home() {
           <Image src={matchWork} />
         </div>
         <Form />
+        {/*}
         <div className={`w-screen flex justify-end`}>
           <Image src={imgForm} height={300} width={300}/>
-        </div>
+        </div> 
+        {*/}
     </div>
   )
 }

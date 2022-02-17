@@ -12,6 +12,7 @@ export default function Input(props: InputProps) {
             <input type={props.type ?? 'text'} 
                    placeholder={props.text}
                    value={props.value}  
+                   onChange={props.changeValue}
                    className={`
                     ml-2 mr-2
                     border
