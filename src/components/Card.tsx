@@ -10,7 +10,7 @@ interface CardProps {
 
 export default function Card(props: CardProps) {
     return (
-        <div className="flex justify-center content-center">
+        <div className="flex">
             <table>
                 <tr>
                     <td colSpan={2}><span className="underline text-2xl">{props.company}</span></td>

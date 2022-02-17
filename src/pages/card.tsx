@@ -18,12 +18,12 @@ export default function CardPage() {
         
         <div className={`flex flex-col justify-end`}>
           <div className={`
-            flex justify-center
-            bg-white rounded-lg ml-4 w-full h-1/2
+            flex justify-left
+            bg-white rounded-lg ml-4 h-1/2
           `}>
             {<Card name={name} company={company} phone={phone} email={email} instagram={instagram} />}
           </div>
-          <div className={`flex justify-start align-bottom mt-10 pb-4 pl-4 w-1/2`} >
+          <div className={`flex justify-start align-bottom mt-10 pb-10 pl-10 w-1/2`} >
             <Image src={matchWork} alt="match icon" />
           </div>
         </div>
