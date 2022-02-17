@@ -16,7 +16,7 @@ export default function QrCodePage() {
         bg-white rounded-lg w-1/3 h-1/2
       `}><QrCode name={router.query.name} email={router.query.email} company={router.query.company} phone={router.query.phone} instagram={router.query.instagram} /></div>
       <div className={`pt-14`}>
-        <Image src={matchWork} />
+        <Image src={matchWork} alt="match icon" />
       </div>
     </div>
   )

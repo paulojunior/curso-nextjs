@@ -24,12 +24,12 @@ export default function CardPage() {
             {<Card name={name} company={company} phone={phone} email={email} instagram={instagram} />}
           </div>
           <div className={`flex justify-start align-bottom mt-10 w-1/2`} >
-            <Image src={matchWork} />
+            <Image src={matchWork} alt="match icon" />
           </div>
         </div>
   
       <div className={`h-full flex flex-col justify-end `}>
-        <Image src={imageCard} />
+        <Image src={imageCard} alt="match icon" />
       </div>
     </div>
   )

@@ -55,8 +55,8 @@ export default function Formulario() {
                 <Input text="Instagram da empresa: informe seu @" value={instagram} type="text" changeValue={(e) => setInstagram(e.target.value)} />
                 <Checkbox text="Estou ciente e permito a coleta dos meus dados pessoais" changeValue={(e) => setData(e.target.value)} />
                 <div className={`flex justify-end mr-2`} >
-                    <Button children={"Limpar"} onClick={router.reload} />
-                    <Button children={"Salvar"} />
+                    <Button onClick={router.reload} >Limpar</Button>
+                    <Button>Salvar</Button>
                 </div>
             </form>
         </div>

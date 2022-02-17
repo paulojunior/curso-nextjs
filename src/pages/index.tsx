@@ -10,17 +10,12 @@ export default function Home() {
       bg-cover
       `}>
         <div className={`p-7 flex justify-center `}>
-          <Image src={matchWork} />
+          <Image src={matchWork} alt="match icon" />
         </div>
         <div className={`w-screen flex justify-end`}>
           <Form />
-          <Image src={imgForm } width={500} height={500}/>
+          <Image src={imgForm } width={500} height={500} alt="match icon"/>
         </div>
-        {/*}
-        <div className={`w-screen flex justify-end`}>
-          
-        </div> 
-        {*/}
     </div>
   )
 }
