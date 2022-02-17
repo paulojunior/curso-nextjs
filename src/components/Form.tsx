@@ -28,7 +28,7 @@ export default function Formulario() {
             })
 
             router.push({
-                pathname: '/qrcode',
+                pathname: 'https://matchwork.vercel.app/qrcode',
                 query: { name: name, email: email, phone: phone, company: company, instagram: instagram, data: data },
              })
         }

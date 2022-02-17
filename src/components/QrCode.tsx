@@ -9,7 +9,7 @@ interface QrCodeProps {
 }
 
 export default function QrCode(props: QrCodeProps) {
-    var URLparams = "http://www.teste.com.br?name="+props.name+"&company="+props.company+"&phone="+props.phone+"&email="+props.email+"&instagram="+props.instagram
+    var URLparams = "https://matchwork.vercel.app/card?name="+props.name+"&company="+props.company+"&phone="+props.phone+"&email="+props.email+"&instagram="+props.instagram
     return (
         <QRCode value={URLparams} size="150" />
     )
