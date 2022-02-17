@@ -14,6 +14,7 @@ export default function Home() {
         </div>
         <div className={`w-screen flex justify-end`}>
           <Form />
+          <div className="pl-14"></div>
           <Image src={imgForm } width={350} height={350} alt="match icon"/>
         </div>
     </div>
