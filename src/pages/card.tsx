@@ -11,7 +11,7 @@ export default function CardPage() {
 
   return (
     <div className={`
-      flex justify-between h-screen w-full
+      flex justify-between h-screen w-full overflow-hidden
       bg-[url('../../public/background.png')]
       bg-cover text-blue-700
     `}>  

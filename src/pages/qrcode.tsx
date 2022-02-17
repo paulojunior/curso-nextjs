@@ -7,7 +7,7 @@ export default function QrCodePage() {
   const router = useRouter()
   return (
     <div className={`
-      flex flex-col justify-center items-center h-screen w-screen
+      flex flex-col justify-center items-center h-screen w-screen overflow-hidden
       bg-black
       bg-contain bg-no-repeat
     `}>  
