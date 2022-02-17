@@ -7,7 +7,7 @@ export default function QrCodePage() {
   const router = useRouter()
   return (
     <div className={`
-      flex flex-col justify-center items-center h-screen w-screen overflow-hidden
+      flex flex-col justify-center items-center h-screen w-screen 
       bg-black
       bg-contain bg-no-repeat
     `}>  
@@ -15,8 +15,8 @@ export default function QrCodePage() {
         flex justify-center items-center
         bg-white rounded-lg w-72 h-72
       `}><QrCode name={router.query.name} email={router.query.email} company={router.query.company} phone={router.query.phone} instagram={router.query.instagram} /></div>
-      <div className={`pt-14`}>
-        <Image src={imagemQrCode} alt="match icon" />
+      <div className={`pt-14 overflow-hidden`}>
+        <Image src={imagemQrCode} alt="match icon"/>
       </div>
     </div>
   )
