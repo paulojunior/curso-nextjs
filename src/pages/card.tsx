@@ -19,7 +19,7 @@ export default function CardPage() {
         <div className={`flex flex-col justify-end`}>
           <div className={`
             flex justify-left
-            bg-white rounded-lg ml-4 h-1/2
+            bg-white rounded-lg ml-4 pl-4 h-1/2
           `}>
             {<Card name={name} company={company} phone={phone} email={email} instagram={instagram} />}
           </div>
