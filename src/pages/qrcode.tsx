@@ -1,7 +1,7 @@
 import QrCode from "../components/QrCode"
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import matchWork from '../../public/matchwork_card.png'
+import imagemQrCode from '../../public/imagem_qrcode.png'
 
 export default function QrCodePage() {
   const router = useRouter()
@@ -13,10 +13,10 @@ export default function QrCodePage() {
     `}>  
       <div className={`
         flex justify-center items-center
-        bg-white rounded-lg w-1/3 h-1/2
+        bg-white rounded-lg w-72 h-72
       `}><QrCode name={router.query.name} email={router.query.email} company={router.query.company} phone={router.query.phone} instagram={router.query.instagram} /></div>
       <div className={`pt-14`}>
-        <Image src={matchWork} alt="match icon" />
+        <Image src={imagemQrCode} alt="match icon" />
       </div>
     </div>
   )
