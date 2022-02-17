@@ -1,13 +1,13 @@
 import QrCode from "../components/QrCode"
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import imagemQrCode from '../../public/imagem_qrcode.png'
+import tag from '../../public/tag_v1.jpeg'
 
 export default function QrCodePage() {
   const router = useRouter()
   return (
     <div className={``}>
-      <QrCode name={router.query.name} email={router.query.email} company={router.query.company} phone={router.query.phone} instagram={router.query.instagram} />
+      <Image src={ tag } width={350} height={350} alt="match icon"/>
     </div>
   )
 }
