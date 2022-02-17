@@ -16,3 +16,12 @@ a {
     -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
     color-adjust: exact !important;                 /*Firefox*/
 }
+
+@page {
+  size:A4;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin: 0;
+}
