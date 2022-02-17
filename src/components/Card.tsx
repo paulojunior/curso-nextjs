@@ -11,13 +11,27 @@ interface CardProps {
 export default function Card(props: CardProps) {
     return (
         <div className="flex justify-center content-center">
-            <div>
-                <div className="text-4xl text-decoration-line: underline flex p-2">{props.company}</div>
-                <div className="text-xl flex p-2">{IconProfile}{props.name}</div>
-                <div className="text-xl flex p-2">{IconPhone}{props.phone}</div>
-                <div className="text-xl flex p-2">{IconEmail}{props.email}</div>
-                <div className="text-xl flex p-2">{IconInstagram}{props.instagram}</div>
-            </div>
+            <table>
+                <tr>
+                    <td colSpan={2}><span className="underline text-2xl">{props.company}</span></td>
+                </tr>
+                <tr>
+                    <td>{IconProfile}</td>
+                    <td>{props.name}</td>
+                </tr>
+                <tr>
+                    <td>{IconPhone}</td>
+                    <td>{props.phone}</td>
+                </tr>
+                <tr>
+                    <td>{IconEmail}</td>
+                    <td>{props.email}</td>
+                </tr>
+                <tr>
+                    <td>{IconInstagram}</td>
+                    <td>{props.instagram}</td>
+                </tr>
+            </table>
         </div>
     )
 }

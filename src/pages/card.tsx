@@ -11,23 +11,25 @@ export default function CardPage() {
 
   return (
     <div className={`
-      flex flex-col justify-between items-center h-screen w-screen
+      flex justify-between h-screen w-screen
       bg-[url('../../public/background.png')]
       bg-cover text-blue-700
     `}>  
-
-        <div className={`
-          flex justify-center items-center mt-20
-          bg-white rounded-lg w-1/3 h-1/3
-        `}>
-          {<Card name={name} company={company} phone={phone} email={email} instagram={instagram} />}
+        
+        <div className={`flex flex-col justify-end`}>
+          <div className={`
+            flex justify-center
+            bg-white rounded-lg ml-4 w-full h-1/2
+          `}>
+            {<Card name={name} company={company} phone={phone} email={email} instagram={instagram} />}
+          </div>
+          <div className={`flex justify-start align-bottom mt-10 w-1/2`} >
+            <Image src={matchWork} />
+          </div>
         </div>
   
-      <div className={`
-        flex flex-row w-screen justify-between
-      `}>
-        <div className=""><Image src={matchWork} /></div>
-        <div className=""><Image src={imageCard} /></div>
+      <div className={`h-full flex flex-col justify-end `}>
+        <Image src={imageCard} />
       </div>
     </div>
   )

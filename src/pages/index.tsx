@@ -6,17 +6,19 @@ import imgForm from '../../public/imagem_form.png'
 export default function Home() {
   return (
     <div className={`
-      flex flex-col justify-start items-center h-screen
       bg-[url('../../public/background.png')]
       bg-cover
       `}>
-        <div className={`p-14`}>
+        <div className={`p-7 flex justify-center `}>
           <Image src={matchWork} />
         </div>
-        <Form />
+        <div className={`w-screen flex justify-end`}>
+          <Form />
+          <Image src={imgForm } width={500} height={500}/>
+        </div>
         {/*}
         <div className={`w-screen flex justify-end`}>
-          <Image src={imgForm} height={300} width={300}/>
+          
         </div> 
         {*/}
     </div>
