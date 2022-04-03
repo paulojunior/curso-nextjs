@@ -14,9 +14,9 @@ interface IProps {
 export default class QrCodePage extends React.Component<IProps> {
   render() {
     return (
-      <div className='yourClassName2'>
-        <Image src={ tag } alt="match icon" width={800} height={800}/>
-        <div className="absolute left-44 top-24">
+      <div className='yourClassName'>
+        <Image src={ tag } alt="match icon" width={800} height={1124}/>
+        <div className="absolute left-48 top-48">
           <QrCode name={this.props.name} email={this.props.email} company={this.props.company} phone={this.props.phone} instagram={this.props.instagram} />
         </div>
       </div>
