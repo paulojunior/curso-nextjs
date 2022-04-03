@@ -2,7 +2,8 @@
 interface ButtonProps {
     className?: string
     children: any
-    onClick?: () => void
+    disabled?: boolean
+    onClick?: (e) => void
 }
 
 export default function Button(props: ButtonProps) {
@@ -18,6 +19,7 @@ export default function Button(props: ButtonProps) {
             rounded-md
             ${props.className}
         `}
+        disabled={props.disabled}
         onClick={props.onClick}
         >
             {props.children}
