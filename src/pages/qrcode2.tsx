@@ -1,6 +1,5 @@
 import QrCode from "../components/QrCode"
 import Image from 'next/image'
-import tag from '../../public/tag.jpeg'
 import React from 'react';
 
 interface IProps {
@@ -14,11 +13,15 @@ interface IProps {
 export default class QrCodePage extends React.Component<IProps> {
   render() {
     return (
-      <div className='yourClassName'>
-        <Image src={ tag } alt="match icon" width={800} height={1124}/>
+      <div className={`
+        yourClassName
+        bg-[url('../../public/tag.jpeg')]
+        bg-cover h-screen
+      `} >
+        {/*<Image src={ tag } alt="match icon" width={900} height={1124}/> */}
         <div className="absolute left-48 top-48">
           <QrCode name={this.props.name} email={this.props.email} company={this.props.company} phone={this.props.phone} instagram={this.props.instagram} />
-        </div>
+    </div>
       </div>
     )
   }
