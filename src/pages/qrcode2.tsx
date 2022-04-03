@@ -16,7 +16,8 @@ export default class QrCodePage extends React.Component<IProps> {
       <div className={`
         yourClassName
         bg-[url('../../public/tag.jpeg')]
-        bg-cover h-screen
+        h-screen w-screen
+        m-0
       `} >
         {/*<Image src={ tag } alt="match icon" width={900} height={1124}/> */}
         <div className="absolute left-48 top-48">
