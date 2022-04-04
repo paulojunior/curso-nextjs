@@ -5,10 +5,7 @@ import imgForm from '../../public/imagem_form.png'
 
 export default function Home() {
   return (
-    <div className={`
-      bg-[url('../../public/background.png')]
-      bg-cover h-screen
-      `}>
+    <div>
         <div className={`p-7 flex justify-center `}>
           <Image src={matchWork} alt="match icon" width={348} height={153}  />
         </div>

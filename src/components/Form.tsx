@@ -71,8 +71,8 @@ export default function Formulario() {
                 <Input text="Instagram da empresa: informe seu @" value={instagram} type="text" changeValue={(e) => setInstagram(e.target.value)} />
                 <Checkbox text="Estou ciente e permito a coleta dos meus dados pessoais" changeValue={(e) => setData(e.target.value)} />
                 <div className={`flex justify-end mr-2`} >
-                    <Button  onClick={(e) => refreshPage(e) } >Limpar</Button>
-                    <ReactToPrint trigger={() => <Button disabled={validadeInputs()} className={validadeInputs() ? "opacity-50 cursor-not-allowed" : ""} >Salvar</Button>} content={() => componentRef} onAfterPrint={() => afterPrint()}/>
+                    <Button  onClick={(e) => refreshPage(e)} >Limpar</Button>
+                    <ReactToPrint trigger={() => <Button disabled={validadeInputs()} className={validadeInputs() ? "opacity-50 cursor-not-allowed" : ""} >Imprimir</Button>} content={() => componentRef} onAfterPrint={() => afterPrint()}/>
                 </div>
             </form>
         </div>
