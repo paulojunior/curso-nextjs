@@ -1,6 +1,6 @@
 import QrCode from "../components/QrCode"
 import Image from 'next/image'
-import tag from '../../public/tag.jpeg'
+import tag from '../../public/tag2.jpeg'
 import React from 'react';
 
 interface IProps {
