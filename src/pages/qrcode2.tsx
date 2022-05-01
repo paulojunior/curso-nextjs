@@ -15,7 +15,7 @@ export default class QrCodePage extends React.Component<IProps> {
   render() {
     return (
       <div className={`
-        yourClassName2
+        yourClassName
       `} >
         <Image src={ tag } alt="match icon" width={710} height={710} />
         { 
