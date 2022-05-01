@@ -17,10 +17,12 @@ export default class QrCodePage extends React.Component<IProps> {
       <div className={`
         yourClassName
       `} >
-        <Image src={ tag } alt="match icon" />
+        <Image src={ tag } alt="match icon" width={710} height={710} />
+        { /*
         <div className="absolute left-32 top-24">
           <QrCode name={this.props.name} email={this.props.email} company={this.props.company} phone={this.props.phone} instagram={this.props.instagram} />
     </div>
+    */ }
       </div>
     )
   }
