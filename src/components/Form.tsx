@@ -6,17 +6,6 @@ import { useState } from "react";
 import ReactToPrint from "react-to-print";
 import QrCodePage from "../pages/qrcode2";
 
-/* 
-    - TODO 
-    1 - Exibir imagem sebrae quando div estiver escondida - ok
-    2 - Enviar parametros para o componente - ok
-    3 - Revisar validação - ok
-    4 - Ajustar para não imprimir quando der erro de validação - ok
-    5 - Ajustar botão de limpar - ok
-    6 - Limpar após fechar impressão - ok
-    7 - Validar se está salvando os dados - ok
-*/
-
 export default function Formulario() {
     const router = useRouter()
 
@@ -40,7 +29,7 @@ export default function Formulario() {
         setData(false);
     }
 
-    const handleForm = async () => {        
+    const handleForm = async () => {   
     }
 
     async function afterPrint() {
@@ -61,7 +50,7 @@ export default function Formulario() {
 
     return (
         <>
-        <QrCodePage ref={(el) => (componentRef = el)} name={name} email={email} phone={phone} company={company} instagram={instagram}/>
+        <QrCodePage ref={(el) => (componentRef = el)} name={name} email={email} phone={phone} company={company} instagram={instagram} />
         <div>
             <form onSubmit={handleForm} action="#">
                 <Input text="Nome" type="text" value={name} changeValue={(e) => setName(e.target.value)} />
