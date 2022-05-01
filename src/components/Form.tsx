@@ -53,15 +53,15 @@ export default function Formulario() {
         <QrCodePage ref={(el) => (componentRef = el)} name={name} email={email} phone={phone} company={company} instagram={instagram} />
         <div>
             <form onSubmit={handleForm} action="#">
-                <Input text="Nome" type="text" /*value={name}*/ value="Paulo Ferreira" changeValue={(e) => setName(e.target.value)} />
-                <Input text="E-mail" type="email" /*value={email}*/ value="jr@live.at" changeValue={(e) => setEmail(e.target.value)} />
-                <Input text="Telefone" type="number" /*value={phone}*/ value="51991749754" changeValue={(e) => setPhone(e.target.value)} />
-                <Input text="Empresa" type="text" /*value={company}*/ value="Red Ventures" changeValue={(e) => setCompany(e.target.value)} />
-                <Input text="Instagram da empresa: informe seu @" /*value={instagram}*/ value="@redventures" type="text" changeValue={(e) => setInstagram(e.target.value)} />
+                <Input text="Nome" type="text" value={name} changeValue={(e) => setName(e.target.value)} />
+                <Input text="E-mail" type="email" value={email} changeValue={(e) => setEmail(e.target.value)} />
+                <Input text="Telefone" type="text" value={phone} changeValue={(e) => setPhone(e.target.value)} />
+                <Input text="Empresa" type="text" value={company} changeValue={(e) => setCompany(e.target.value)} />
+                <Input text="Instagram da empresa: informe seu @" value={instagram} type="text" changeValue={(e) => setInstagram(e.target.value)} />
                 <Checkbox text="Estou ciente e permito a coleta dos meus dados pessoais" changeValue={(e) => setData(e.target.value)} />
                 <div className={`flex justify-end mr-2`} >
                     <Button  onClick={(e) => refreshPage(e)} >Limpar</Button>
-                    <ReactToPrint trigger={() => <Button /*disabled={validadeInputs()} className={validadeInputs() ? "opacity-50 cursor-not-allowed" : ""} */>Imprimir</Button>} content={() => componentRef} onAfterPrint={() => afterPrint()}/>
+                    <ReactToPrint trigger={() => <Button disabled={validadeInputs()} className={validadeInputs() ? "opacity-50 cursor-not-allowed" : ""} >Imprimir</Button>} content={() => componentRef} onAfterPrint={() => afterPrint()}/>
                 </div>
             </form>
         </div>
