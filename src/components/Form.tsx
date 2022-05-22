@@ -19,6 +19,12 @@ export default function Formulario() {
     const [instagram, setInstagram] = useState('')
     const [data, setData] = useState<boolean>(false)
 
+    const onSubmit = (event) => {
+        event.preventDefault();
+        console.log("submission prevented");
+      };
+
+    
     function refreshPage(e){
         e.preventDefault();
         setName('');
@@ -27,10 +33,7 @@ export default function Formulario() {
         setCompany('');
         setInstagram('');
         setData(false);
-    }
-
-    const handleForm = async () => {   
-    }
+    } 
 
     async function afterPrint() {
             await fetch('/api/cliente', {
@@ -52,7 +55,7 @@ export default function Formulario() {
         <>
         <QrCodePage ref={(el) => (componentRef = el)} name={name} email={email} phone={phone} company={company} instagram={instagram} />
         <div>
-            <form onSubmit={handleForm} action="#">
+            <form onSubmit={onSubmit}>
                 <Input text="Nome" type="text" value={name} changeValue={(e) => setName(e.target.value)} />
                 <Input text="E-mail" type="email" value={email} changeValue={(e) => setEmail(e.target.value)} />
                 <Input text="Telefone" type="text" value={phone} changeValue={(e) => setPhone(e.target.value)} />
