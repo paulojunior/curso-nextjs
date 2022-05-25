@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { useState } from "react";
 import ReactToPrint from "react-to-print";
 import QrCodePage from "../pages/qrcode2";
+import Dropbox from "./Dropbox";
 
 export default function Formulario() {
     const router = useRouter()
@@ -17,7 +18,16 @@ export default function Formulario() {
     const [phone, setPhone] = useState('')
     const [company, setCompany] = useState('')
     const [instagram, setInstagram] = useState('')
+    const [type, setType] = useState('')
     const [data, setData] = useState<boolean>(false)
+
+    const options = [
+        { value: 'STARTUP', label: 'STARTUP' },
+        { value: 'POTENCIAL EMPREENDEDOR', label: 'POTENCIAL EMPREENDEDOR' },
+        { value: 'COLABORADOR', label: 'COLABORADOR' },
+        { value: 'EMPREENDEDOR', label: 'EMPREENDEDOR' },
+        { value: 'INVESTIDOR', label: 'INVESTIDOR' }
+      ]
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -32,13 +42,14 @@ export default function Formulario() {
         setPhone('');
         setCompany('');
         setInstagram('');
+        setType('');
         setData(false);
     } 
 
     async function afterPrint() {
             await fetch('/api/cliente', {
                 method: 'POST',
-                body: JSON.stringify({ name: name, email: email, phone: phone, company: company, instagram: instagram, data: data }),
+                body: JSON.stringify({ name: name, email: email, phone: phone, company: company, instagram: instagram, type: type, data: data }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -48,7 +59,7 @@ export default function Formulario() {
     }
 
     const validadeInputs = () => {
-        return (!name || !email || !phone || !company || !instagram);
+        return (!name || !email || !phone || !company || !type || !instagram);
     }
 
     return (
@@ -58,6 +69,7 @@ export default function Formulario() {
             <form onSubmit={onSubmit}>
                 <Input text="Nome" type="text" value={name} changeValue={(e) => setName(e.target.value)} />
                 <Input text="E-mail" type="email" value={email} changeValue={(e) => setEmail(e.target.value)} />
+                <Dropbox options={options} value={type} changeValue={(e) => setType(e)} />
                 <Input text="Telefone" type="text" value={phone} changeValue={(e) => setPhone(e.target.value)} />
                 <Input text="Empresa" type="text" value={company} changeValue={(e) => setCompany(e.target.value)} />
                 <Input text="Instagram da empresa: informe seu @" value={instagram} type="text" changeValue={(e) => setInstagram(e.target.value)} />
