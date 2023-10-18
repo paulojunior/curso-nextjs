@@ -3,9 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: Helvetica;
-  background-image: url("./../../public/background.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgb(10, 32, 202); 
 }
 
 a {
@@ -17,6 +15,16 @@ a {
   box-sizing: border-box;
     -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
     color-adjust: exact !important;                 /*Firefox*/
+}
+
+@media print {
+  body {
+    background: none !important;
+  }
+
+  img {
+    transform: translateX(20px);
+  }
 }
 
 @page {
