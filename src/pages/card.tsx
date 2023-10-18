@@ -1,35 +1,45 @@
-import Card from "../components/Card";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import Card, { CardProps } from "../components/Card";
 import Image from 'next/image'
-import matchWork from '../../public/matchwork_card.png'
-import imageCard from '../../public/imagem_card.png'
+import matchWork from '../../public/mercopar365_logo.png'
+import fraseMercopar from '../../public/frase_mercopar365.png'
+import circleMercopar from '../../public/asset_mercopar365.png'
 
 export default function CardPage() {
   const router = useRouter()
   console.log(router.query)
-  const {name, company, phone, email, instagram} = router.query
+  const { name, company, phone, email, instagram } = router.query
+
+  const cardProps: CardProps = {
+    name: name as string,
+    company: company as string,
+    phone: phone as string,
+    email: email as string,
+    instagram: instagram as string,
+  };
 
   return (
     <div className={`
       flex justify-between h-screen w-full overflow-hidden
-      bg-[url('../../public/background.png')]
-      bg-cover text-blue-700
     `}>  
-        
-        <div className={`flex flex-col justify-end`}>
-          <div className={`
-            flex justify-left
-            bg-white rounded-lg ml-4 pl-4 h-1/2
-          `}>
-            {<Card name={name} company={company} phone={phone} email={email} instagram={instagram} />}
-          </div>
-          <div className={`flex justify-start align-bottom mt-10 pb-10 pl-10 w-1/2`} >
-            <Image src={matchWork} alt="match icon" />
-          </div>
+      <div className={`flex flex-col justify-center w-2/3`}>
+        <div className={`h-full flex justify-center items-center`}>
+          <Image src={fraseMercopar} alt="match icon" />
         </div>
-  
-      <div className={`h-full flex flex-col justify-end`}>
-        <Image src={imageCard} alt="match icon" />
+        <div className={`
+          flex 
+          bg-white rounded-lg m-4 mb-16
+        `}>
+          <Card {...cardProps} />
+        </div>
+      </div>
+      <div className={`flex flex-col justify-center mr-10 items-center w-1/4`}>
+        <div>
+          <Image src={matchWork} alt="match icon" className={`object-contain`} />
+        </div>
+        <div>
+          <Image src={circleMercopar} alt="match icon" className={`object-contain`} />
+        </div>
       </div>
     </div>
   )
